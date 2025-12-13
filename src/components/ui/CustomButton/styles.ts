@@ -19,10 +19,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.incorrectRed,
   },
   disabled: {
-    backgroundColor: colors.bluredBackground,
-    borderColor: colors.grayBorder,
-    borderWidth: wp(1),
-    opacity: 0.88,
+    backgroundColor: colors.inactiveYellow,
   },
   pressed: {
     opacity: 0.5,

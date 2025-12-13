@@ -17,6 +17,7 @@ interface CustomGameHeaderProps {
   hideBackButton?: boolean;
   onRightButtonPress?: () => void;
   rightButtonIcon?: keyof typeof ICONS;
+  onBackPress?: () => void;
 }
 
 const CustomGameHeader = ({
@@ -24,11 +25,16 @@ const CustomGameHeader = ({
   hideBackButton = false,
   onRightButtonPress,
   rightButtonIcon,
+  onBackPress: customOnBackPress,
 }: CustomGameHeaderProps) => {
   const navigation = useNavigation<MainStackNavigationProp>();
 
   const onBackPress = () => {
-    navigation.goBack();
+    if (customOnBackPress) {
+      customOnBackPress();
+    } else {
+      navigation.goBack();
+    }
   };
 
   return (
