@@ -1,3 +1,8 @@
+export type TaskType = {
+  text: string;
+  time: number;
+};
+
 export const TASKS = [
   { text: 'Celebrate a winning goal like a star striker', time: 7000 },
   { text: 'Imitate a coach arguing with the referee', time: 8000 },

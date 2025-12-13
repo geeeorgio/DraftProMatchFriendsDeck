@@ -3,6 +3,7 @@ import { createContext, useContext } from 'react';
 import type { ImageSourcePropType } from 'react-native';
 
 import { MAIN_BACKGROUND, MIN_NUMBER_OF_ROUNDS } from 'src/constants';
+import type { PlayerData } from 'src/types';
 
 type GameContextType = {
   isContextLoading: boolean;
@@ -11,12 +12,12 @@ type GameContextType = {
   contextIsOnboardingCompleted: boolean;
   contextSetIsOnboardingCompleted: () => void;
   //
-  contextPlayers: string[];
-  contextSetPlayers: Dispatch<SetStateAction<string[]>>;
+  contextPlayers: PlayerData[];
+  contextSetPlayers: Dispatch<SetStateAction<PlayerData[]>>;
   contextResetPlayers: () => void;
   //
   contextNumberOfRounds: number;
-  contextSetNumberOfRounds: (n: number) => void;
+  contextSetNumberOfRounds: Dispatch<SetStateAction<number>>;
 };
 
 export const GameContext = createContext<GameContextType>({
@@ -26,7 +27,10 @@ export const GameContext = createContext<GameContextType>({
   contextSetIsOnboardingCompleted: async () => {
     console.warn('Game Context not mounted');
   },
-  contextPlayers: ['', ''],
+  contextPlayers: [
+    { id: 'p0', name: '' },
+    { id: 'p1', name: '' },
+  ],
   contextSetPlayers: () => {
     console.warn('Game Context not mounted');
   },

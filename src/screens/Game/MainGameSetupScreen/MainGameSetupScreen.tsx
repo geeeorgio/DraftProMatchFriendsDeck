@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { View } from 'react-native';
 
 import { styles } from './styles';
@@ -35,8 +35,9 @@ const MainGameSetupScreen = () => {
   const [showExitModal, setShowExitModal] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const flatListRef = useRef<any>(null);
-  const atLeastOnePlayer = contextPlayers.some((player) => player !== '');
-  const canNotKickOffGame = contextPlayers.some((player) => player === '');
+  const atLeastOnePlayer = contextPlayers.some(
+    (player) => player.name.trim() !== '',
+  );
 
   const canShowExitModal = !showExitModal && atLeastOnePlayer;
   const canRemovePlayer = contextPlayers.length > MIN_PLAYERS;
@@ -51,61 +52,83 @@ const MainGameSetupScreen = () => {
     return unsubscribe;
   }, [navigation, canShowExitModal]);
 
-  const handlePlayerChange = (index: number, text: string) => {
-    contextSetPlayers((prev: string[]) => {
-      const updated = [...prev];
-      updated[index] = text;
-      return updated;
-    });
-  };
+  const handlePlayerChange = useCallback(
+    (id: string, text: string) => {
+      contextSetPlayers((prev) =>
+        prev.map((player) =>
+          player.id === id ? { ...player, name: text } : player,
+        ),
+      );
+    },
+    [contextSetPlayers],
+  );
 
-  const handlePlayerRemove = (index: number) => {
-    contextSetPlayers((prev: string[]) => {
-      if (prev.length <= MIN_PLAYERS) return prev;
-      return prev.filter((_, i) => i !== index);
-    });
-  };
+  const handlePlayerRemove = useCallback(
+    (id: string) => {
+      contextSetPlayers((prev) => {
+        if (prev.length <= MIN_PLAYERS) return prev;
+        return prev.filter((player) => player.id !== id);
+      });
+    },
+    [contextSetPlayers],
+  );
 
-  const handleAddPlayer = () => {
-    contextSetPlayers((prev: string[]) => [...prev, '']);
+  const handleAddPlayer = useCallback(() => {
+    contextSetPlayers((prev) => [
+      ...prev,
+      { id: String(Date.now()), name: '' },
+    ]);
     setTimeout(() => {
       flatListRef.current?.scrollToEnd({ animated: true });
     }, 100);
-  };
+  }, [contextSetPlayers]);
 
-  const handleDecreaseRounds = () => {
-    if (contextNumberOfRounds > MIN_NUMBER_OF_ROUNDS) {
-      contextSetNumberOfRounds(contextNumberOfRounds - 1);
-    }
-  };
+  const handleDecreaseRounds = useCallback(() => {
+    contextSetNumberOfRounds((prev) =>
+      prev > MIN_NUMBER_OF_ROUNDS ? prev - 1 : prev,
+    );
+  }, [contextSetNumberOfRounds]);
 
-  const handleIncreaseRounds = () => {
-    if (contextNumberOfRounds < MAX_NUMBER_OF_ROUNDS) {
-      contextSetNumberOfRounds(contextNumberOfRounds + 1);
-    }
-  };
+  const handleIncreaseRounds = useCallback(() => {
+    contextSetNumberOfRounds((prev) =>
+      prev < MAX_NUMBER_OF_ROUNDS ? prev + 1 : prev,
+    );
+  }, [contextSetNumberOfRounds]);
 
-  const handleExitConfirm = () => {
+  const handleExitConfirm = useCallback(() => {
     setShowExitModal(false);
-    contextResetPlayers();
     contextSetNumberOfRounds(MIN_NUMBER_OF_ROUNDS);
+    contextResetPlayers();
     navigation.goBack();
-  };
+  }, [contextResetPlayers, contextSetNumberOfRounds, navigation]);
 
-  const handleExitCancel = () => setShowExitModal(false);
+  const handleExitCancel = useCallback(() => setShowExitModal(false), []);
 
-  const handleKickOffGame = () => {
-    if (!canNotKickOffGame) {
-      navigation.navigate('MainGameScreen');
-    } else {
+  const handleKickOffGame = useCallback(() => {
+    const cleanedPlayers = contextPlayers.map((player) => ({
+      ...player,
+      name: player.name.trim(),
+    }));
+
+    const hasEmpty = cleanedPlayers.some((p) => p.name === '');
+
+    if (hasEmpty) {
       setShowAlert(true);
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 2000);
+      setTimeout(() => setShowAlert(false), 2000);
+      return;
     }
-  };
 
-  const handleAboutPress = () => navigation.navigate('AboutScreen');
+    contextSetPlayers(cleanedPlayers);
+
+    requestAnimationFrame(() => {
+      navigation.navigate('MainGameScreen');
+    });
+  }, [contextPlayers, contextSetPlayers, navigation]);
+
+  const handleAboutPress = useCallback(
+    () => navigation.navigate('AboutScreen'),
+    [navigation],
+  );
 
   return (
     <CustomScreenWrapper extraStyle={styles.container}>

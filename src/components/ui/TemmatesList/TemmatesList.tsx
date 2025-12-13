@@ -6,10 +6,12 @@ import CustomInput from '../CustomInput/CustomInput';
 
 import { styles } from './styles';
 
+import type { PlayerData } from 'src/types';
+
 type TemmatesListProps = {
-  players: string[];
-  onPlayerChange: (index: number, text: string) => void;
-  onPlayerRemove: (index: number) => void;
+  players: PlayerData[];
+  onPlayerChange: (id: string, text: string) => void;
+  onPlayerRemove: (id: string) => void;
   canRemovePlayer?: boolean;
   listRef: RefObject<any>;
 };
@@ -21,26 +23,22 @@ const TemmatesList = ({
   canRemovePlayer = true,
   listRef,
 }: TemmatesListProps) => {
-  const keyExtractor = useCallback((_: string, index: number) => {
-    return index.toString();
+  const keyExtractor = useCallback((item: PlayerData) => {
+    return item.id;
   }, []);
 
   const renderItem = useCallback(
-    ({ item, index }: { item: string; index: number }) => (
+    ({ item, index }: { item: PlayerData; index: number }) => (
       <CustomInput
-        value={item}
-        onChangeText={(text) => onPlayerChange(index, text)}
-        onRemove={() => onPlayerRemove(index)}
+        value={item.name}
+        onChangeText={(text) => onPlayerChange(item.id, text)}
+        onRemove={() => onPlayerRemove(item.id)}
         index={index}
         canRemove={canRemovePlayer}
       />
     ),
     [onPlayerChange, onPlayerRemove, canRemovePlayer],
   );
-
-  const handleContentSizeChange = useCallback(() => {
-    listRef.current?.scrollToEnd({ animated: true });
-  }, [listRef]);
 
   return (
     <FlatList
@@ -51,7 +49,6 @@ const TemmatesList = ({
       style={styles.list}
       contentContainerStyle={styles.listContent}
       showsVerticalScrollIndicator={false}
-      onContentSizeChange={handleContentSizeChange}
     />
   );
 };

@@ -11,6 +11,7 @@ import CustomText from './ui/CustomText/CustomText';
 import ExitConfirmationModal from './ui/ExitConfirmationModal/ExitConfirmationModal';
 import GameBackground from './ui/GameBackground/GameBackground';
 import KickOffGameAlert from './ui/KickOffGameAlert/KickOffGameAlert';
+import TaskCard from './ui/TaskCard/TaskCard';
 import TemmatesList from './ui/TemmatesList/TemmatesList';
 
 export {
@@ -28,4 +29,5 @@ export {
   ExitConfirmationModal,
   CustomActionButtons,
   KickOffGameAlert,
+  TaskCard,
 };
