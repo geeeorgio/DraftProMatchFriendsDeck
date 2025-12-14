@@ -10,7 +10,7 @@ interface CustomButtonProps {
   onPress?: () => void;
   disabled?: boolean;
   extraStyle?: StyleProp<ViewStyle>;
-  variant?: 'green' | 'yellow' | 'red';
+  variant?: 'green' | 'yellow' | 'red' | 'black';
   distance?: Insets;
 }
 

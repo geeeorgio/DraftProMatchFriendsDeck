@@ -18,8 +18,13 @@ export const styles = StyleSheet.create({
   red: {
     backgroundColor: colors.incorrectRed,
   },
+  black: {
+    backgroundColor: colors.black,
+    borderColor: colors.white,
+    borderWidth: wp(1),
+  },
   disabled: {
-    backgroundColor: colors.inactiveYellow,
+    opacity: 0.75,
   },
   pressed: {
     opacity: 0.5,

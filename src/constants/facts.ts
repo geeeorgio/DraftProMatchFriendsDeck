@@ -2,6 +2,7 @@ export type FactVariantType = {
   index: number;
   text: string;
   description: string;
+  isCorrect?: boolean;
 };
 
 export type FactType = {
