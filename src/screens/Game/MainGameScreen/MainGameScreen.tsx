@@ -27,6 +27,8 @@ const MainGameScreen = () => {
     contextSetNumberOfRounds,
   } = useGameContext();
 
+  const [isExiting, setIsExiting] = useState(false);
+
   const [showExitModal, setShowExitModal] = useState(false);
   const [timeToStart, setTimeToStart] = useState(3);
   const [indexOfCurrentPlayer, setIndexOfCurrentPlayer] = useState(0);
@@ -81,6 +83,10 @@ const MainGameScreen = () => {
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('beforeRemove', (e) => {
+      if (isExiting) {
+        return;
+      }
+
       if (!showExitModal) {
         e.preventDefault();
         setShowExitModal(true);
@@ -88,16 +94,21 @@ const MainGameScreen = () => {
     });
 
     return unsubscribe;
-  }, [navigation, showExitModal]);
+  }, [navigation, showExitModal, isExiting]);
 
-  const handleExitConfirm = useCallback(() => {
-    setShowExitModal(false);
-    contextSetNumberOfRounds(MIN_NUMBER_OF_ROUNDS);
-    contextResetPlayers();
-    navigation.goBack();
-  }, [contextResetPlayers, contextSetNumberOfRounds, navigation]);
+  const resetLocalGameState = useCallback(() => {
+    setIndexOfCurrentPlayer(0);
+    setCurrentRound(1);
+    setMatchCount({});
+    setGameFinished(false);
+    setRoundStarted(false);
+    setRoundCompleted(false);
+    setTimeToStart(3);
 
-  const handleExitCancel = useCallback(() => setShowExitModal(false), []);
+    const initialTask = getRandomTask();
+    setCurrentTask(initialTask);
+    setTimeToAnswer(initialTask.time / 1000);
+  }, []);
 
   const resetRoundState = useCallback(() => {
     const newTask = getRandomTask();
@@ -149,14 +160,50 @@ const MainGameScreen = () => {
   );
 
   const onSharePress = useCallback(() => handleShare(), []);
+  const handleRightButtonPress = useCallback(() => setShowExitModal(true), []);
+  const handleExitCancel = useCallback(() => setShowExitModal(false), []);
 
   const onHomePress = useCallback(() => {
+    resetLocalGameState();
+    setIsExiting(true);
+
     contextSetNumberOfRounds(MIN_NUMBER_OF_ROUNDS);
     contextResetPlayers();
-    navigation.navigate('HomeScreen');
-  }, [contextResetPlayers, contextSetNumberOfRounds, navigation]);
 
-  const handleRightButtonPress = useCallback(() => setShowExitModal(true), []);
+    setTimeout(() => {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }],
+      });
+    }, 0);
+  }, [
+    contextResetPlayers,
+    contextSetNumberOfRounds,
+    navigation,
+    resetLocalGameState,
+  ]);
+
+  const handleExitConfirm = useCallback(() => {
+    setShowExitModal(false);
+
+    resetLocalGameState();
+    setIsExiting(true);
+
+    contextSetNumberOfRounds(MIN_NUMBER_OF_ROUNDS);
+    contextResetPlayers();
+
+    setTimeout(() => {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'HomeScreen' }],
+      });
+    }, 0);
+  }, [
+    contextResetPlayers,
+    contextSetNumberOfRounds,
+    navigation,
+    resetLocalGameState,
+  ]);
 
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
