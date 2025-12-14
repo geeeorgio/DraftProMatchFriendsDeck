@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     paddingVertical: hp(6),
   },
   input: {
-    fontSize: sp(16),
+    fontSize: sp(14),
     fontFamily: FONTS.Medium,
     color: colors.white,
   },

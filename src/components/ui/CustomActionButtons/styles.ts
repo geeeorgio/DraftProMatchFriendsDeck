@@ -11,12 +11,13 @@ export const styles = StyleSheet.create({
     gap: hp(12),
   },
   roundsTitle: {
-    fontSize: sp(22),
+    fontSize: sp(20),
     color: colors.white,
     fontFamily: FONTS.SemiBold,
     textTransform: 'uppercase',
   },
   roundsControls: {
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     gap: wp(12),
@@ -33,12 +34,12 @@ export const styles = StyleSheet.create({
   },
   roundsDisplay: {
     flex: 1,
-    paddingVertical: hp(12),
+    paddingVertical: hp(6),
     paddingHorizontal: wp(16),
     minWidth: wp(80),
   },
   roundsNumber: {
-    fontSize: sp(20),
+    fontSize: sp(18),
     color: colors.white,
     fontFamily: FONTS.SemiBold,
     textAlign: 'center',

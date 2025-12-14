@@ -1,6 +1,6 @@
 import type { RefObject } from 'react';
 import React, { useCallback } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 
 import CustomInput from '../CustomInput/CustomInput';
 
@@ -49,6 +49,7 @@ const TemmatesList = ({
       style={styles.list}
       contentContainerStyle={styles.listContent}
       showsVerticalScrollIndicator={false}
+      ListFooterComponent={<View style={styles.listFooter} />}
     />
   );
 };

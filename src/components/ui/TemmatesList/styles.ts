@@ -9,4 +9,7 @@ export const styles = StyleSheet.create({
   listContent: {
     gap: hp(16),
   },
+  listFooter: {
+    height: hp(8),
+  },
 });

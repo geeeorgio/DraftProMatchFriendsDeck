@@ -130,6 +130,26 @@ const MainGameSetupScreen = () => {
     [navigation],
   );
 
+  const handleBackPress = useCallback(() => {
+    if (atLeastOnePlayer) {
+      navigation.goBack();
+      return;
+    }
+
+    contextResetPlayers();
+    contextSetNumberOfRounds(MIN_NUMBER_OF_ROUNDS);
+
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'HomeScreen' }],
+    });
+  }, [
+    atLeastOnePlayer,
+    contextResetPlayers,
+    contextSetNumberOfRounds,
+    navigation,
+  ]);
+
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
       <View style={styles.contentWrapper}>
@@ -137,6 +157,7 @@ const MainGameSetupScreen = () => {
           title="Add Teammates"
           rightButtonIcon="info"
           onRightButtonPress={handleAboutPress}
+          onBackPress={handleBackPress}
         />
         <View style={styles.listContainer}>
           <TemmatesList

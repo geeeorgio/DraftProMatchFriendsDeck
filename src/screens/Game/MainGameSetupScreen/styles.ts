@@ -8,6 +8,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingTop: hp(16),
   },
   contentWrapper: {
     width: '100%',
@@ -33,7 +34,7 @@ export const styles = StyleSheet.create({
   },
   kickOffButton: {
     width: '100%',
-    paddingVertical: hp(16),
+    paddingVertical: hp(12),
     paddingHorizontal: wp(24),
     marginBottom: hp(24),
   },

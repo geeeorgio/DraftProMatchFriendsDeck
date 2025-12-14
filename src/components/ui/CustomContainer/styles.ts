@@ -30,4 +30,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.incorrectRed,
     borderWidth: wp(1),
   },
+  alert: {
+    backgroundColor: colors.redContainer,
+  },
 });

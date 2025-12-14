@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   },
   buttonsContainer: {
     width: '100%',
-    gap: wp(12),
+    gap: wp(14),
   },
   winButton: {
     width: '100%',
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: wp(24),
   },
   btnText: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.SemiBoldItalic,
     textTransform: 'uppercase',
   },
@@ -39,11 +39,10 @@ export const styles = StyleSheet.create({
     width: wp(100),
     height: hp(100),
     borderRadius: wp(50),
-    borderWidth: wp(1),
-    borderColor: colors.activeYellow,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.black,
+    overflow: 'hidden',
   },
   timeToStartText: {
     fontSize: sp(50),
@@ -53,7 +52,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   timeToAnswerText: {
-    fontSize: sp(90),
+    fontSize: sp(80),
     fontFamily: FONTS.SemiBoldItalic,
     textTransform: 'uppercase',
   },

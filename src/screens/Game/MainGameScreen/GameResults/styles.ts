@@ -11,13 +11,17 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   leaderboardContainer: {
+    flex: 1,
     width: '100%',
+  },
+  leaderboardContentContainer: {
     gap: hp(16),
+    paddingBottom: hp(30),
   },
   leaderboardItem: {
     width: '100%',
     alignItems: 'center',
-    gap: hp(12),
+    gap: hp(6),
     paddingVertical: hp(12),
     paddingHorizontal: wp(16),
   },
@@ -29,7 +33,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: wp(16),
   },
   championText: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.MediumItalic,
     textTransform: 'uppercase',
   },
@@ -37,14 +41,14 @@ export const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: hp(12),
+    gap: hp(4),
   },
   leaderboardName: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.Medium,
   },
   leaderboardWins: {
-    fontSize: sp(13),
+    fontSize: sp(12),
     fontFamily: FONTS.MediumItalic,
     color: colors.activeYellow,
   },

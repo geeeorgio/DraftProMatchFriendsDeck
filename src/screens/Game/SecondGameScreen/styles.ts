@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     marginBottom: hp(20),
   },
   title: {
-    fontSize: sp(14),
+    fontSize: sp(13),
     color: colors.black,
     fontFamily: FONTS.MediumItalic,
     textTransform: 'uppercase',
@@ -25,30 +25,30 @@ export const styles = StyleSheet.create({
   },
   variantsContainer: {
     width: '100%',
-    gap: hp(18),
+    gap: hp(16),
     justifyContent: 'center',
     alignItems: 'center',
   },
   variantButton: {
     width: '100%',
-    padding: wp(16),
+    padding: wp(12),
     minHeight: hp(90),
     maxHeight: hp(100),
   },
   variantButtonPressed: {
     borderColor: colors.activeYellow,
-    borderWidth: wp(1.5),
+    borderWidth: wp(1),
   },
   variantButtonCorrect: {
     borderColor: colors.greenContainer,
-    borderWidth: wp(1.5),
+    borderWidth: wp(1),
   },
   variantButtonIncorrect: {
     borderColor: colors.incorrectRed,
-    borderWidth: wp(1.5),
+    borderWidth: wp(1),
   },
   variantButtonText: {
-    fontSize: sp(15),
+    fontSize: sp(13),
     fontFamily: FONTS.Medium,
     textAlign: 'center',
   },

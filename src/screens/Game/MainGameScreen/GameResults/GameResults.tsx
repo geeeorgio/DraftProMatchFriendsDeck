@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { styles } from './styles';
 
@@ -26,7 +26,11 @@ const GameResults = ({
 }: GameResultsProps) => {
   return (
     <View style={styles.contentWrapper}>
-      <View style={styles.leaderboardContainer}>
+      <ScrollView
+        style={styles.leaderboardContainer}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.leaderboardContentContainer}
+      >
         {playerStats
           .map((player) => ({
             name: player.name,
@@ -59,7 +63,7 @@ const GameResults = ({
               </View>
             </CustomContainer>
           ))}
-      </View>
+      </ScrollView>
 
       <View style={styles.footer}>
         <CustomButton onPress={onSharePress} extraStyle={styles.shareButton}>

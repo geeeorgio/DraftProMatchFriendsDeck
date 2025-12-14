@@ -8,7 +8,7 @@ import { styles } from './styles';
 interface CustomContainerProps {
   children: ReactNode;
   extraStyle?: StyleProp<ViewStyle>;
-  variant?: 'black' | 'green' | 'correct' | 'incorrect' | 'yellow';
+  variant?: 'black' | 'green' | 'correct' | 'incorrect' | 'yellow' | 'alert';
 }
 
 const CustomContainer = ({

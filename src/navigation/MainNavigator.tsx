@@ -38,7 +38,6 @@ const MainNavigator = () => {
         options={{
           title: 'Timeline Challenge',
           headerShown: true,
-          animation: 'slide_from_left',
         }}
       />
       <MainStack.Screen

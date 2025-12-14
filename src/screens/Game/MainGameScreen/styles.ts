@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     gap: hp(30),
+    paddingTop: hp(16),
     paddingBottom: hp(30),
   },
   contentWrapper: {

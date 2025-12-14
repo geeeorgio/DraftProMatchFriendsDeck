@@ -6,7 +6,7 @@ import { hp, sp, wp } from 'src/utils';
 export const styles = StyleSheet.create({
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: wp(20),
@@ -18,6 +18,8 @@ export const styles = StyleSheet.create({
     borderRadius: wp(14),
     gap: hp(20),
     backgroundColor: colors.bluredBackground,
+    borderWidth: wp(1),
+    borderColor: colors.grayBorder,
   },
   textContainer: {
     gap: hp(8),

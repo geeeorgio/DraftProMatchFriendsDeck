@@ -4,7 +4,8 @@ import { View } from 'react-native';
 import { styles } from './styles';
 
 import { CustomButton, CustomText, TaskCard } from 'src/components';
-import type { TaskType } from 'src/constants';
+import { type TaskType } from 'src/constants';
+import { getTimerBorderStyles } from 'src/utils';
 
 interface GameIsActiveProps {
   currentTask: TaskType;
@@ -21,6 +22,10 @@ const GameIsActive = ({
   handleCountTheMatch,
   handleMissedShot,
 }: GameIsActiveProps) => {
+  const totalTimeSeconds = currentTask.time / 1000;
+
+  const borderStyles = getTimerBorderStyles(totalTimeSeconds, timeToAnswer);
+
   return (
     <View style={styles.contentWrapper}>
       <TaskCard task={currentTask} isPreview={false} />
@@ -46,7 +51,7 @@ const GameIsActive = ({
           </CustomButton>
         </View>
       ) : (
-        <View style={styles.timeToAnswerContainer}>
+        <View style={[styles.timeToAnswerContainer, borderStyles]}>
           <CustomText extraStyle={styles.timeToStartText}>
             {timeToAnswer}
           </CustomText>

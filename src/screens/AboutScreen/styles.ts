@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     padding: wp(20),
   },
   text: {
-    fontSize: sp(16),
+    fontSize: sp(14),
     fontFamily: FONTS.Medium,
     lineHeight: sp(20),
   },

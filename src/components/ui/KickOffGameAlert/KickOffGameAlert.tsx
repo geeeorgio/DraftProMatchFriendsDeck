@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
+import CustomContainer from '../CustomContainer/CustomContainer';
 import CustomText from '../CustomText/CustomText';
 
 import { styles } from './styles';
@@ -15,7 +16,9 @@ const KickOffGameAlert = ({ visible, message }: KickOffGameAlertProps) => {
 
   return (
     <View style={styles.container}>
-      <CustomText extraStyle={styles.text}>{message}</CustomText>
+      <CustomContainer variant="alert" extraStyle={styles.alertContainer}>
+        <CustomText extraStyle={styles.text}>{message}</CustomText>
+      </CustomContainer>
     </View>
   );
 };

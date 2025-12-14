@@ -1,5 +1,9 @@
+import type { ViewStyle } from 'react-native';
+
+import { wp } from './scaling';
+
 import type { FactVariantType } from 'src/constants';
-import { FACTS, TASKS } from 'src/constants';
+import { colors, FACTS, TASKS } from 'src/constants';
 
 export const getRandomTask = () => {
   const randomIndex = Math.floor(Math.random() * TASKS.length);
@@ -50,4 +54,35 @@ export const shuffleArray = <T>(array: T[]): T[] => {
   }
 
   return shuffledArray;
+};
+
+export const getTimerBorderStyles = (
+  totalTimeSeconds: number,
+  timeToAnswer: number,
+): ViewStyle => {
+  const styles: ViewStyle = {
+    borderWidth: wp(3),
+    borderColor: colors.activeYellow,
+  };
+
+  const stepDuration = totalTimeSeconds / 4;
+  const timePassed = totalTimeSeconds - timeToAnswer;
+
+  if (timePassed > stepDuration) {
+    styles.borderRightWidth = 0;
+  }
+
+  if (timePassed > stepDuration * 2) {
+    styles.borderBottomWidth = 0;
+  }
+
+  if (timePassed > stepDuration * 3) {
+    styles.borderLeftWidth = 0;
+  }
+
+  if (timePassed >= totalTimeSeconds) {
+    styles.borderTopWidth = 0;
+  }
+
+  return styles;
 };
