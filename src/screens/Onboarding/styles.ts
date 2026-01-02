@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   onbdContainer: {
     width: '100%',
     height: '44%',
-    backgroundColor: colors.black,
+    backgroundColor: colors.lightRed,
     borderTopRightRadius: wp(20),
     borderTopLeftRadius: wp(20),
     justifyContent: 'space-between',
@@ -57,6 +57,10 @@ export const styles = StyleSheet.create({
   button: {
     width: '100%',
     paddingVertical: hp(12),
+    borderWidth: wp(1),
+    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    borderColor: colors.shadowText,
+    borderRadius: wp(32),
   },
   buttonText: {
     fontSize: sp(16),

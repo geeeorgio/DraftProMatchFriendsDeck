@@ -7,6 +7,10 @@ export const styles = StyleSheet.create({
   background: {
     width: '100%',
     aspectRatio: 0.7,
+    borderWidth: wp(1),
+    borderColor: colors.white,
+    overflow: 'hidden',
+    borderRadius: wp(32),
   },
   content: {
     flex: 1,
@@ -18,7 +22,7 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: sp(24),
     fontFamily: FONTS.SemiBoldItalic,
-    color: colors.activeYellow,
+    color: colors.white,
     textAlign: 'center',
     textTransform: 'uppercase',
   },

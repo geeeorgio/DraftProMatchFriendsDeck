@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { FONTS } from 'src/constants';
+import { colors, FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
@@ -25,6 +25,8 @@ export const styles = StyleSheet.create({
   },
   shareButton: {
     padding: wp(16),
+    borderWidth: wp(1),
+    borderColor: colors.shadowText,
   },
   settingsItemText: {
     fontSize: sp(14),

@@ -1,12 +1,12 @@
-export const MAIN_BACKGROUND = require('../assets/images/bckg/bckg.png');
+export const MAIN_BACKGROUND = require('../assets/images/bckg/become_bg.png');
 
-export const CARD_BKGD = require('../assets/images/bckg/card_frame.png');
+export const CARD_BKGD = require('../assets/images/bckg/become_card_frame.png');
 
 export const EXTRA_BKGDS = {
-  onboarding_1: require('../assets/images/bckg/onbd1.png'),
-  onboarding_2: require('../assets/images/bckg/onbd2.png'),
-  onboarding_3: require('../assets/images/bckg/onbd3.png'),
-  home_bg: require('../assets/images/bckg/main_screen_bg.png'),
+  onboarding_1: require('../assets/images/bckg/become_onbd1.png'),
+  onboarding_2: require('../assets/images/bckg/become_onbd2.png'),
+  onboarding_3: require('../assets/images/bckg/become_onbd3.png'),
+  home_bg: require('../assets/images/bckg/become_main_bg.png'),
 };
 
 export const ICONS = {

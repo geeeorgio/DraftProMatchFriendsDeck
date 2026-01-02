@@ -26,7 +26,7 @@ const TaskCard = ({ task, isPreview = true }: TaskCardProps) => {
       <View style={styles.content}>
         <CustomText extraStyle={styles.text}>{task.text}</CustomText>
         {isPreview && (
-          <CustomContainer variant="yellow" extraStyle={styles.timeContainer}>
+          <CustomContainer variant="red" extraStyle={styles.timeContainer}>
             <CustomText extraStyle={styles.timeText}>{timeText}</CustomText>
           </CustomContainer>
         )}

@@ -19,7 +19,7 @@ const CustomButton = ({
   onPress,
   disabled = false,
   extraStyle,
-  variant = 'yellow',
+  variant = 'red',
   distance = { top: 10, left: 10, right: 10, bottom: 10 },
 }: CustomButtonProps) => {
   return (

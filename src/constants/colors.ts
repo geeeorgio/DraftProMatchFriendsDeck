@@ -3,6 +3,7 @@ export const colors = {
   black: '#000',
   redContainer: '#ff2b13',
   greenContainer: '#04d900',
+  lightRed: '#cd5c5c',
 
   incorrectRed: '#ff383c',
   correctYellow: '#ede72f',

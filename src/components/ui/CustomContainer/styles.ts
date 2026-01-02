@@ -33,4 +33,8 @@ export const styles = StyleSheet.create({
   alert: {
     backgroundColor: colors.redContainer,
   },
+  red: {
+    backgroundColor: colors.lightRed,
+    borderColor: colors.white,
+  },
 });

@@ -31,6 +31,9 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: hp(8),
     paddingHorizontal: wp(16),
+    borderWidth: wp(1),
+    borderColor: colors.greenContainer,
+    borderRadius: wp(32),
   },
   championText: {
     fontSize: sp(16),
@@ -50,7 +53,7 @@ export const styles = StyleSheet.create({
   leaderboardWins: {
     fontSize: sp(12),
     fontFamily: FONTS.MediumItalic,
-    color: colors.activeYellow,
+    color: colors.shadowText,
   },
   gameInfoContainer: {
     flexDirection: 'row',

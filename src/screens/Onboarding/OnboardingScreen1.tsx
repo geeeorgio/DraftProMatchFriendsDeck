@@ -41,7 +41,7 @@ const OnboardingScreen1 = () => {
             Time Out from the Game
           </CustomText>
           <CustomText extraStyle={styles.description}>
-            Every match needs a break. Draft ProMatch Friends Deck turns your
+            Every match needs a break. Become Better Than Before turns your
             timeout into a fun mini-stadium, where you leave the scoreboard
             behind and just laugh with your squad
           </CustomText>
@@ -60,7 +60,7 @@ const OnboardingScreen1 = () => {
 
           <CustomButton
             onPress={handleNext}
-            variant="yellow"
+            // variant="yellow"
             extraStyle={styles.button}
           >
             <CustomText extraStyle={styles.buttonText}>Next</CustomText>

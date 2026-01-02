@@ -62,7 +62,7 @@ export const getTimerBorderStyles = (
 ): ViewStyle => {
   const styles: ViewStyle = {
     borderWidth: wp(3),
-    borderColor: colors.activeYellow,
+    borderColor: colors.white,
   };
 
   const stepDuration = totalTimeSeconds / 4;

@@ -45,7 +45,7 @@ const GameResults = ({
             >
               {index === 0 && (
                 <CustomContainer
-                  variant="green"
+                  // variant="green"
                   extraStyle={styles.championContainer}
                 >
                   <CustomText extraStyle={styles.championText}>

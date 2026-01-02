@@ -42,7 +42,7 @@ const GameIsActive = ({
           </CustomButton>
           <CustomButton
             onPress={handleMissedShot}
-            variant="red"
+            variant="black"
             extraStyle={styles.loseButton}
           >
             <CustomText extraStyle={[styles.loseBtnText, styles.btnText]}>

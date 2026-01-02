@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.activeYellow,
   },
   red: {
-    backgroundColor: colors.incorrectRed,
+    backgroundColor: colors.lightRed,
   },
   black: {
     backgroundColor: colors.black,

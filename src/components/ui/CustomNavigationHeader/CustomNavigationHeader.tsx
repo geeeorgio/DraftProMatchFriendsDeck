@@ -30,7 +30,7 @@ const CustomNavigationHeader = ({ props }: CustomNavigationHeaderProps) => {
         >
           <CustomIcon name="arrow_left" />
         </CustomButton>
-        <CustomContainer variant="yellow" extraStyle={styles.titleContainer}>
+        <CustomContainer variant="red" extraStyle={styles.titleContainer}>
           <CustomText extraStyle={styles.title}>{title}</CustomText>
         </CustomContainer>
       </View>
