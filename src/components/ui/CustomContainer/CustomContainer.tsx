@@ -15,13 +15,14 @@ interface CustomContainerProps {
     | 'incorrect'
     | 'yellow'
     | 'alert'
-    | 'red';
+    | 'red'
+    | 'blue';
 }
 
 const CustomContainer = ({
   children,
   extraStyle,
-  variant = 'red',
+  variant = 'blue',
 }: CustomContainerProps) => {
   return (
     <View style={[styles.default, styles[variant], extraStyle]}>

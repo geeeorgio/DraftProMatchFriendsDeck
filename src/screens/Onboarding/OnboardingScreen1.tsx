@@ -41,9 +41,9 @@ const OnboardingScreen1 = () => {
             Time Out from the Game
           </CustomText>
           <CustomText extraStyle={styles.description}>
-            Every match needs a break. Become Better Than Before turns your
-            timeout into a fun mini-stadium, where you leave the scoreboard
-            behind and just laugh with your squad
+            Every match needs a break. Friends Sports Deck turns your timeout
+            into a fun mini-stadium, where you leave the scoreboard behind and
+            just laugh with your squad
           </CustomText>
 
           <View style={styles.indicatorContainer}>

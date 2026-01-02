@@ -84,7 +84,7 @@ const SecondGameScreen = () => {
   return (
     <CustomScreenWrapper extraStyle={styles.container}>
       <View style={styles.contentContainer}>
-        <CustomContainer variant="red" extraStyle={styles.header}>
+        <CustomContainer variant="blue" extraStyle={styles.header}>
           <CustomText extraStyle={styles.title}>{fact.question}</CustomText>
         </CustomContainer>
 

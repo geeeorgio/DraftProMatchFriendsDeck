@@ -13,8 +13,8 @@ const AboutScreen = () => {
     <CustomScreenWrapper extraStyle={styles.container}>
       <CustomContainer extraStyle={styles.aboutContainer}>
         <CustomText extraStyle={styles.text}>
-          Become Better Than Before is your quick sports break between real
-          games, workouts, and busy days. The app turns any short pause into a
+          Friends Sports Deck is your quick sports break between real games,
+          workouts, and busy days. The app turns any short pause into a
           mini-stadium where you and your friends act out goals, copy coaches
           and fans, shout team names, and race the clock in fast Squad Match
           rounds. When time runs out, the squad decides together: count the

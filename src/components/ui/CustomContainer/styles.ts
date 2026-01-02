@@ -37,4 +37,8 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.lightRed,
     borderColor: colors.white,
   },
+  blue: {
+    backgroundColor: colors.warmBlue,
+    borderColor: colors.white,
+  },
 });

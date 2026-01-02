@@ -79,7 +79,7 @@ android {
 
     namespace "com.draftpromatchfriendsdeck"
     defaultConfig {
-        applicationId "com.becomebetterthanbefore"
+        applicationId "com.friendssportsdeck"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

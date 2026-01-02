@@ -18,6 +18,9 @@ export const styles = StyleSheet.create({
   red: {
     backgroundColor: colors.lightRed,
   },
+  blue: {
+    backgroundColor: colors.warmBlue,
+  },
   black: {
     backgroundColor: colors.black,
     borderColor: colors.white,

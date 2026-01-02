@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
   },
   gameButtonText: {
     fontSize: sp(16),
-    color: colors.black,
+    color: colors.blueText,
     fontFamily: FONTS.SemiBoldItalic,
     textTransform: 'uppercase',
   },

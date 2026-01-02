@@ -4,6 +4,8 @@ export const colors = {
   redContainer: '#ff2b13',
   greenContainer: '#04d900',
   lightRed: '#cd5c5c',
+  warmBlue: '#4682b4',
+  blueText: '#1d2d3d',
 
   incorrectRed: '#ff383c',
   correctYellow: '#ede72f',

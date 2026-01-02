@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: sp(13),
-    color: colors.black,
+    color: colors.blueText,
     fontFamily: FONTS.MediumItalic,
     textTransform: 'uppercase',
     textAlign: 'center',
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   submitBtnText: {
     fontSize: sp(18),
-    color: colors.black,
+    color: colors.blueText,
     fontFamily: FONTS.SemiBoldItalic,
     textAlign: 'center',
     textTransform: 'uppercase',
@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
   },
   nextBtnText: {
     fontSize: sp(18),
-    color: colors.black,
+    color: colors.blueText,
     fontFamily: FONTS.SemiBoldItalic,
     textTransform: 'uppercase',
   },

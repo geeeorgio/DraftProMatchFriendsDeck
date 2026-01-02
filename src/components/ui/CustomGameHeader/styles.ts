@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: sp(16),
-    color: colors.black,
+    color: colors.blueText,
     fontFamily: FONTS.MediumItalic,
     textTransform: 'uppercase',
   },

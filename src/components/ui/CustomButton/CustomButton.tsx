@@ -10,7 +10,7 @@ interface CustomButtonProps {
   onPress?: () => void;
   disabled?: boolean;
   extraStyle?: StyleProp<ViewStyle>;
-  variant?: 'green' | 'yellow' | 'red' | 'black';
+  variant?: 'green' | 'yellow' | 'red' | 'black' | 'blue';
   distance?: Insets;
 }
 
@@ -19,7 +19,7 @@ const CustomButton = ({
   onPress,
   disabled = false,
   extraStyle,
-  variant = 'red',
+  variant = 'blue',
   distance = { top: 10, left: 10, right: 10, bottom: 10 },
 }: CustomButtonProps) => {
   return (
